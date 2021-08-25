@@ -39,11 +39,11 @@ variable "enable_classiclink" {
   default = "false"
 }
 
-variable "enable_dns_hostname" {
+variable "enable_dns_hostnames" {
   default = "true"
 }
 
-variable "assign_generated_ipv6_cird_block" {
+variable "assign_generated_ipv6_cidr_block" {
   default = "false"
 }
 

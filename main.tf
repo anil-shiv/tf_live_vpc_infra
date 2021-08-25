@@ -65,7 +65,7 @@ resource "aws_nat_gateway" "main" {
 
 
 module "dmz_senitive_subnet" {
-  source = "git::ssh://git@github.com:anil-shiv/tf_aws_public_subnet.git"
+  source = "git@github.com:anil-shiv/tf_aws_public_subnet.git"
 
   name                = "${var.environment}-dmz_sensitive"
   cidrs               = var.dmz_sensitive_subnet_cidrs
@@ -82,7 +82,7 @@ module "dmz_senitive_subnet" {
 }
 
 module "dmz_standard_subnet" {
-  source = "git::ssh://git@github.com:anil-shiv/tf_aws_public_subnet.git"
+  source = "git@github.com:anil-shiv/tf_aws_public_subnet.git"
 
   name                = "${var.environment}-dmz_standard"
   cidrs               = var.dmz_standard_subnet_cidrs
@@ -99,7 +99,7 @@ module "dmz_standard_subnet" {
 }
 
 module "db_standard_subnet" {
-  source = "git::ssh://git@github.com:anil-shiv/tf_aws_private_subnet_nat_gateway.git"
+  source = "git@github.com:anil-shiv/tf_aws_private_subnet_nat_gateway.git"
 
 
   name                = "${var.environment}-db_standard"

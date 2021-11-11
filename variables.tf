@@ -1,34 +1,42 @@
 variable "name" {
   description = "Name tag eg stack"
+  default = "my-vpc"
 }
 
 variable "region" {
   description = "AWS reagion in Which resources are created, You must set the avalibility_zone variable as well if you define this value something other than the default"
+  default = "us-east-1"
 }
 
 variable "avalibility_zone" {
   description = "A comma-separated list of avalibility zones"
   type        = list(string)
+  default = [ "us-east-1a","us-east-1b" ]
 }
 
 variable "environment" {
-  description = "Environment tag, recommmendation: <account name>_<region>, e.g. prod_us-west-2"
+  description = "Environment tag, recommmendation: <account name>_<region>, e.g. dev_us-east-1"
+  default = "dev_us-east-1"
 }
 
 variable "business_unit" {
   description = "Business unit within organization (e.g. Consumer)"
+  default = "Consumer"
 }
 
 variable "app_tag" {
   description = "APP tag eg. Plateform, DevOps"
+  default = "DevOps"
 }
 
 variable "managed_by" {
   description = "Managed by eg. Plateform, DevOps"
+  default = "DevOps"
 }
 
 variable "cidr" {
   description = "CIDR block for VPC"
+  default = "10.0.0.0/16"
 }
 
 variable "enable_dns_support" {
@@ -55,13 +63,13 @@ variable "aws_vpn_gateway" {
 variable "dmz_standard_subnet_cidrs" {
   description = "List of subnet block for dmz subnet for 'standard' data"
   type        = list(string)
-  default     = []
+  default     = ["10.0.3.0/24"]
 }
 
 variable "dmz_sensitive_subnet_cidrs" {
   description = "List of subnet block for dmz subnet for 'sensitive' data"
   type        = list(string)
-  default     = []
+  default     = ["10.0.1.0/24","10.0.2.0/24"]
 }
 
 variable "web_standard_subnet_cidrs" {
